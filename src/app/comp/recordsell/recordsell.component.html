@@ -1,0 +1,40 @@
+<app-loading *ngIf="loading"></app-loading>
+<div *ngIf="!loading">
+
+  <span style="margin-top: 20px" fxLayout fxLayoutGap="20px" fxLayoutAlign="center center">
+    <p-chip  (click)="changeOnTextClick(0)" [styleClass]="!checked1 ? 'custom-chip' : ''" label="Record Sell"></p-chip>
+
+    <p-inputSwitch #switchButton [(ngModel)]="checked1"></p-inputSwitch>
+    <p-chip (click)="changeOnTextClick(1)" [styleClass]="checked1 ? 'custom-chip' : ''" label="Record New Stock"></p-chip>
+  </span>
+  <div style="margin-top: 30px;" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+
+    <p-dropdown [options]="options" [(ngModel)]="selectedOptions" optionLabel="iName" [filter]="true" filterBy="name"
+      [showClear]="true" placeholder="Select the Name">
+      <ng-template pTemplate="selectedItem">
+        <div class="country-item country-item-value" *ngIf="selectedOptions">
+          <div>{{selectedOptions.iName +' Part No. '+ selectedOptions.partNo }}</div>
+        </div>
+      </ng-template>
+      <ng-template let-option pTemplate="item">
+        <div class="country-item">
+          <div>{{option.iName}}</div>
+        </div>
+      </ng-template>
+    </p-dropdown>
+    <div class="p-field">
+      <label for="quantity">Quantity</label>
+      <p-inputNumber #quantity id="quantity" [required]="true" aria-describedby="quantity-help" [min]="1"
+        [(ngModel)]="itemQuantity"></p-inputNumber>
+
+      <small id="quantity-help">Enter the quantity {{!checked1?"sold":"bought"}}.</small>
+
+    </div>
+    <button pButton (click)="addTrx();quantity.value=+''" [disabled]="itemQuantity==null||selectedOptions==null"
+      type="button" label="Add Transaction"></button>
+
+
+  </div>
+
+</div>
+<p-toast position="top-right"></p-toast>

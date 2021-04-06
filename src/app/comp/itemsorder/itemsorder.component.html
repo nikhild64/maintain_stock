@@ -1,0 +1,141 @@
+<p-table
+  #dt1
+  [value]="tableData"
+  dataKey="id"
+  [rows]="10"
+  [showCurrentPageReport]="true"
+  [rowsPerPageOptions]="[10, 25, 50]"
+  [loading]="loading"
+  styleClass="p-datatable-customers p-datatable-gridlines"
+  [paginator]="true"
+  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  [globalFilterFields]="['iName', 'partNo', 'position']"
+>
+  <ng-template pTemplate="caption">
+    <div class="p-d-flex">
+      <span class="p-input-icon-left p-ml-auto">
+        <i class="pi pi-search"></i>
+        <input
+          pInputText
+          type="text"
+          (input)="applyFilterGlobal($event, 'contains')"
+          placeholder="Search keyword"
+        />
+      </span>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="partNo">
+        <div class="p-d-flex p-jc-between p-ai-center">
+          Part No.
+          <p-columnFilter
+            type="text"
+            field="partNo"
+            display="menu"
+          ></p-columnFilter>
+          <p-sortIcon field="partNo"></p-sortIcon>
+        </div>
+      </th>
+      <th pSortableColumn="iName">
+        <div class="p-d-flex p-jc-between p-ai-center">
+          Name
+          <p-columnFilter
+            type="text"
+            field="iName"
+            display="menu"
+          ></p-columnFilter>
+          <p-sortIcon field="iName"></p-sortIcon>
+
+        </div>
+      </th>
+      <th pSortableColumn="mrp">
+        <div class="p-d-flex p-jc-between p-ai-center">
+          MRP
+          <p-columnFilter
+            type="number"
+            field="mrp"
+            display="menu"
+          ></p-columnFilter>
+          <p-sortIcon field="mrp"></p-sortIcon>
+        </div>
+      </th>
+      <th pSortableColumn="cp">
+        <div class="p-d-flex p-jc-between p-ai-center">
+          Cost Price
+          <p-columnFilter
+            type="number"
+            field="cp"
+            display="menu"
+          ></p-columnFilter>
+          <p-sortIcon field="cp"></p-sortIcon>
+        </div>
+      </th >
+      <th pSortableColumn="sp">
+        <div class="p-d-flex p-jc-between p-ai-center">
+          Selling Price
+          <p-columnFilter
+            type="number"
+            field="sp"
+            display="menu"
+          ></p-columnFilter>
+          <p-sortIcon field="sp"></p-sortIcon>
+        </div>
+      </th>
+      <th pSortableColumn="quantity">
+        <div class="p-d-flex p-jc-between p-ai-center">
+          Quantity
+          <p-columnFilter
+            type="number"
+            field="quantity"
+            display="menu"
+          ></p-columnFilter>
+          <p-sortIcon field="quantity"></p-sortIcon>
+        </div>
+      </th>
+      <th fxHide pSortableColumn="position">
+        <div class="p-d-flex p-jc-between p-ai-center">
+          Position
+          <p-columnFilter
+            type="text"
+            field="position"
+            display="menu"
+          ></p-columnFilter>
+          <p-sortIcon field="position"></p-sortIcon>
+        </div>
+      </th>
+    </tr>
+  </ng-template>
+      <ng-template pTemplate="body" let-item>
+        <tr>
+          <td>
+            {{ item.partNo }}
+          </td>
+          <td>
+            {{ item.iName }}
+          </td>
+          <td>
+            {{ item.mrp }}
+          </td>
+          <td>
+            {{ item.cp }}
+          </td>
+          <td>
+            {{ item.sp }}
+          </td>
+
+          <td [ngClass]="{'less-stock':item.quantity<=5}" >
+            {{ item.quantity }}
+          </td>
+          <td fxHide>
+            {{ item.position }}
+          </td>
+        </tr>
+      </ng-template>
+
+  <ng-template pTemplate="emptymessage">
+		<tr>
+			<td colspan="6">No Items found.</td>
+		</tr>
+	</ng-template>
+</p-table>

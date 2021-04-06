@@ -1,0 +1,26 @@
+<p-menubar   [model]="loggedIn?items:[]" >
+
+  <ng-template pTemplate="start">
+<div   >
+  <i fxHide.gt-sm [fxHide]="!loggedIn" (click)="menuMb.toggle($event)" style="cursor: pointer;" class="pi pi-bars"></i>
+<span style="color:'var(--primary-color)';" class="brand-name" [routerLink]="loggedIn?'/add-stock':'/home'">
+  <b>Maintain Stock</b>
+</span>
+
+</div>
+</ng-template>
+<ng-template  pTemplate="end" >
+  <div  fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+    <div *ngIf="!loggedIn" class="Login" routerLink='/login' style="cursor: pointer;" >
+      <b style="color:'var(--primary-color)';">Login/SignUp</b>
+    </div>
+    <div  *ngIf="loggedIn" (click)="logout()" class="Login" routerLink='/login' style="cursor: pointer;">
+      <b style="color:'var(--primary-color)';">Logout</b>
+    </div>
+     <app-theme-palette 	></app-theme-palette>
+
+  </div>
+
+  </ng-template>
+</p-menubar>
+<p-menu [popup]="true" fxHide.gt-sm  #menuMb [model]="items"></p-menu>

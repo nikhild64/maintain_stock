@@ -1,0 +1,11 @@
+.brand-name{
+  margin: 5px;
+  font-size: x-large;
+  cursor: pointer;
+}
+:host ::ng-deep {
+  .p-menubar-button{
+    display: none;
+  }
+  }
+

@@ -1,0 +1,30 @@
+<app-loading *ngIf="loading"></app-loading>
+<p-card *ngIf="!loading" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+  <form #login="ngForm" (ngSubmit)="loginForm()">
+
+    <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+
+      <div class="p-field">
+        <label for="username">Username : </label>
+        <input id="username" required name="username" ngModel type="text" pInputText />
+      </div>
+      <div class="p-field">
+        <label for="password">Password : </label>
+        <input id="password" required name="password" ngModel type="password" pInputText />
+
+      </div>
+      <p-button type="submit" [label]="signup?'SignUp':'Login'" icon="pi pi-check" iconPos="left"></p-button>
+      <p-button icon="pi pi-google" (click)="googleLogin()" label="Signup/Login With Google" iconPos="left"></p-button>
+      <span (click)="signup=!signup" style="color:'var(--primary-color)';cursor: pointer;">Want to {{!signup?"create
+        account":"login"}} via email?, click here..</span>
+    </div>
+
+  </form>
+</p-card>
+<p-dialog header="Error" [(visible)]="display" [style]="{width: '30vw'}">
+  {{content}}
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="display=false" label="Ok" styleClass="p-button-text"></p-button>
+
+  </ng-template>
+</p-dialog>

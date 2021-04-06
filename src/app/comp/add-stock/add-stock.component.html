@@ -1,0 +1,51 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+  <div fxLayout="row wrap" fxLayoutGap="20px">
+    <span class="p-float-label">
+      <input id="partNo" name="partNo" type="text" pInputText ngModel />
+      <label for="partNo">Part No.</label>
+    </span>
+    <span class="p-float-label">
+      <input id="iName" name="iName" type="text" pInputText ngModel required />
+      <label for="iName">Name</label>
+    </span>
+    <span class="p-float-label">
+      <p-inputNumber
+        mrp="ngModel"
+        [(ngModel)]="mrp"
+        id="mrp"
+        name="mrp"
+        mode="decimal"
+        ngModel
+      ></p-inputNumber>
+      <label for="mrp">MRP</label>
+    </span>
+    <span class="p-float-label">
+      <p-inputNumber id="cp"
+      [(ngModel)]="cp" name="cp" mode="decimal" ngModel></p-inputNumber>
+      <label for="cp">Cost Price</label>
+    </span>
+
+    <span class="p-float-label">
+      <p-inputNumber id="sp"
+      [(ngModel)]="sp" name="sp" mode="decimal" ngModel></p-inputNumber>
+      <label for="sp">Selling Price</label>
+    </span>
+    <span class="p-float-label">
+      <p-inputNumber [(ngModel)]="quantity"  id="quantity" name="quantity" ngModel></p-inputNumber>
+      <label for="quantity">Quantity</label>
+    </span>
+    <span class="p-float-label">
+      <input id="position" name="position" ngModel type="text" pInputText />
+      <label for="position">Product Location</label>
+    </span>
+  </div>
+  <button
+    pButton
+    type="submit"
+    label="Add Item"
+    icon="pi pi-check"
+    class="p-button-raised"
+  ></button>
+</form>
+
+<p-messages></p-messages>

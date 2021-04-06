@@ -1,0 +1,16 @@
+:host ::ng-deep .p-menu{
+height: 300px;
+overflow: scroll;
+scroll-behavior: smooth;
+}
+
+:host ::ng-deep .p-menuitem-text{
+display: flex;
+align-content: space-around;
+img{
+  width: 30px;
+}
+p{
+  margin: 16px;
+}
+}

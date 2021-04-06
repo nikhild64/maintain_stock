@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "lmsyestem": {
+      "hosting": {
+        "ak-stocks": [
+          "lmsyestem"
+        ]
+      }
+    }
+  }
+}
