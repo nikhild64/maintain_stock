@@ -14,8 +14,8 @@ const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const routes: Routes = [
   {
     path: 'add-stock',
+    loadChildren:()=>import('./add-stock/add-stock.module').then(m=>m.AddStockModule),
     canActivate: [AngularFireAuthGuard],
-    component: AddStockComponent,
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
 

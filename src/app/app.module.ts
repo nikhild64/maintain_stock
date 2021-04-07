@@ -46,7 +46,6 @@ import {RippleModule} from 'primeng/ripple';
   declarations: [
     AppComponent,
     MenuBarComponent,
-    AddStockComponent,
     SeeStockComponent,
     ItemsorderComponent,
     LoginComponent,
@@ -83,7 +82,6 @@ import {RippleModule} from 'primeng/ripple';
     MessagesModule,
     MessageModule,
     BrowserAnimationsModule,
-
     TableModule,
     PasswordModule,
   ],
