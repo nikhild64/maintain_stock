@@ -1,5 +1,28 @@
 # Maintain Stock
 
+# What we do?
+Still struggling to manage your retail store's inventory,so you are at correct page and a Sign In away. This application will help you add your inventory stock at one place
+
+You can login at one click with your Google Account with enhanced security.
+
+
+# Easy to add Items
+There are 7 fields available to describe your item, and with special field to also mention the location of the product to find it on your desk
+
+
+# Fully flexible Data View Table
+Data you added can be seen on one screen with all sorting and filter options available to help you handle your large inventory.
+
+
+# Diffrent View to show Items you may consider to order having less stock
+Always it has been extra care when it comes to ordering the items which have reduced the threshold limit, so with our all new page view all items with less than 5 quantity will be shown to you. This quantity will be adjustable in future updates...
+
+
+# Record New Inventory intake or Sold Items
+A Diffrent screen to manage the new stock intake or items sold, so as to keep your stock list upto date and avoid last minute hasstles.
+
+So what are you waiting for just dive into the all new experience and just be sure many more exciting features are on the way
+# # # # # # 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
 
 ## Development server
