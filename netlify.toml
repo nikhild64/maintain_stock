@@ -1,6 +1,6 @@
 # example netlify.toml
 [build]
-  command = "npm run config -- --environment=prod && ng build --prod"
+  command = "npm run config -- --environment=prod && ng build --configuration production"
   functions = "netlify"
   publish = "dist/ak-stocks"
 
